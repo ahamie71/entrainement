@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/Form/RegisterType.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1663847664624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1663848346870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n                     'attr' => [\n \n                         'placeholder' => 'merci de confirmer votre mot de passe',\n                 ]\n-            ])\n+            ]\n \n             ->add('submit', SubmitType::class, [\n                 'label' => \"S'inscrire\",\n               \n"
+                },
+                {
+                    "date": 1663848358879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n                 'label' => \"S'inscrire\",\n               \n             ])\n \n-        ;\n+        \n     }\n \n \n     public function configureOptions(OptionsResolver $resolver): void\n"
+                },
+                {
+                    "date": 1663848672004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,19 +42,28 @@\n                 'second_options' => [\n                     'label' => 'Confirmez votre mot de passe',\n                     'attr' => [\n \n-                        'placeholder' => 'merci de confirmer votre mot de passe',\n+                        'class'=>'form-control',\n+\n+                    ]\n                 ]\n-            ]\n+            ])\n \n             ->add('submit', SubmitType::class, [\n                 'label' => \"S'inscrire\",\n-              \n+                'attr' => [\n+                    'class' => 'btn btn-primary'\n+                ] \n             ])\n \n+\n+            ;\n+\n+                }  \n+\n         \n-    }\n+    \n \n \n     public function configureOptions(OptionsResolver $resolver): void\n     {\n"
+                },
+                {
+                    "date": 1663848713243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<<?php\n+<?php\n \n namespace App\\Form;\n \n use App\\Entity\\User;\n"
+                },
+                {
+                    "date": 1663849062378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,11 @@\n             ])\n             ->add('email', EmailType::class,[\n                 \"label\"=>false\n             ])\n+            ->add('telephone,text', TextType::class,[\n+                 \"label\"=>false\n+                 ])\n \n             ->add('password', RepeatedType::class, [\n                 'type' => PasswordType::class,\n                 'invalid_message' => 'Le mot de passe et la confirmation doivent être identique.',\n"
+                },
+                {
+                    "date": 1663849097782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             ])\n             ->add('email', EmailType::class,[\n                 \"label\"=>false\n             ])\n-            ->add('telephone,text', TextType::class,[\n+            ->add('telephone' , TextType::class,[\n                  \"label\"=>false\n                  ])\n \n             ->add('password', RepeatedType::class, [\n"
+                }
+            ],
+            "date": 1663847664624,
+            "name": "Commit-0",
+            "content": "<<?php\n\nnamespace App\\Form;\n\nuse App\\Entity\\User;\nuse Symfony\\Component\\Form\\AbstractType;\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\EmailType;\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\PasswordType;\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\RepeatedType;\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\SubmitType;\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\TextType;\nuse Symfony\\Component\\Form\\FormBuilderInterface;\nuse Symfony\\Component\\OptionsResolver\\OptionsResolver;\n\nclass RegisterType extends AbstractType\n{\n    public function buildForm(FormBuilderInterface $builder, array $options)\n    {\n        $builder\n            ->add('nom', TextType::class,[\n                \"label\"=>false\n            ])\n            ->add('prenom' , TextType::class,[\n                \"label\"=>false\n            ])\n            ->add('email', EmailType::class,[\n                \"label\"=>false\n            ])\n\n            ->add('password', RepeatedType::class, [\n                'type' => PasswordType::class,\n                'invalid_message' => 'Le mot de passe et la confirmation doivent être identique.',\n                'label' => 'Votre mot de passe',\n                'required' => true,\n                'first_options' => [\n                    'label' => 'Mot de passe',\n                    'attr' => [\n                        'class'=>'form-control',\n\n                    ]\n                ],\n                'second_options' => [\n                    'label' => 'Confirmez votre mot de passe',\n                    'attr' => [\n\n                        'placeholder' => 'merci de confirmer votre mot de passe',\n                ]\n            ])\n\n            ->add('submit', SubmitType::class, [\n                'label' => \"S'inscrire\",\n              \n            ])\n\n        ;\n    }\n\n\n    public function configureOptions(OptionsResolver $resolver): void\n    {\n        $resolver->setDefaults([\n            'data_class' => User::class,\n        ]);\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "templates/register/index.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1663848307957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1663848313538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n {% block title %}Hello RegisterController!{% endblock %}\n \n {% block body %}\n \n-{{form(form)}}\n+{{ form(form) }}\n \n {% endblock %}\n"
+                },
+                {
+                    "date": 1663848935048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,56 @@\n {% extends 'base.html.twig' %}\n \n-{% block title %}Hello RegisterController!{% endblock %}\n+{% block title %}Inscription{% endblock %}\n \n {% block body %}\n \n-{{ form(form) }}\n \n-{% endblock %}\n+\n+    <br>\n+    <br>\n+\n+    <section class=\"form\">\n+        <div class=\"container\">\n+\n+            {% if notification %}\n+                <div class=\"alert alert-success\">\n+                    {{ notification }}\n+                </div>\n+            {% endif %}\n+\n+            <div class=\"row\">\n+                <div class=\"col\"></div>\n+                <div class=\"col-6\">\n+                    {{ form_start(form) }}\n+\n+                    <div class=\"mb-3\">\n+                    {{ form_label(form.nom, 'Nom', {'label_attr': {'class': 'form-label'}}) }}\n+                    {{ form_row(form.nom , {'attr' : {'class' : 'form-control'}}) }}\n+                    </div>\n+\n+                    {{ form_label(form.prenom, 'Prenom', {'label_attr': {'class': 'form-label'}}) }}\n+                    {{ form_row(form.prenom  , {'attr' : {'class' : 'form-control'}}) }}\n+\n+                    {{ form_label(form.email , 'Email', {'label_attr': {'class': 'form-label'}}) }}\n+                    {{ form_row(form.email , {'attr' : {'class' : 'form-control'}}) }}\n+\n+                    {{ form_label(form.telephone , 'telephone', {'label_attr': {'class': 'form-label'}}) }}\n+                    {{ form_row(form.telephone , {'attr' : {'class' : 'form-control'}}) }}\n+\n+\n+\n+\n+\n+                    {{ form_row(form.password) }}\n+\n+                    {{ form_end(form) }}\n+                </div>\n+                <div class=\"col\"></div>\n+            </div>\n+        </div>\n+    </section>\n+\n+\n+\n+\n+{% endblock %}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1663848307957,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\n\n{% block title %}Hello RegisterController!{% endblock %}\n\n{% block body %}\n\n{{form(form)}}\n\n{% endblock %}\n"
+        }
+    ]
+}

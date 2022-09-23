@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/Controller/Admin/WelcomeCrudController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1663700441001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1663700849034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n \n namespace App\\Controller\\Admin;\n \n use App\\Entity\\Welcome;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ImageField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class WelcomeCrudController extends AbstractCrudController\n {\n@@ -16,15 +18,13 @@\n         return $crud\n             ->setEntityLabelInplural('Welcome') \n             ->setENtityLabel('welcome') ; \n          }\n-    /*\n-    public function configureFields(string $pageName): iterable\n-    {\n-        return [\n-            IdField::new('id'),\n-            TextField::new('title'),\n-            TextEditorField::new('description'),\n-        ];\n-    }\n-    */\n+         public function configureFields(string $pageName): iterable\n+         {\n+             return [\n+                 TextField::new('titre'),\n+                 TextField::new('soustitre'),\n+                 ImageField::new('image')\n+             ];\n }\n+}\n"
+                },
+                {
+                    "date": 1663701284696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,10 @@\n              return [\n                  TextField::new('titre'),\n                  TextField::new('soustitre'),\n                  ImageField::new('image')\n+                 ->setBasePath('Welcome/')\n+                ->setUploadDir('public/Welcome')\n+               -> setUploadedFileNamePattern('[randomhash].[extension]')\n              ];\n }\n }\n"
+                },
+                {
+                    "date": 1663701349625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n          public function configureFields(string $pageName): iterable\n          {\n              return [\n                  TextField::new('titre'),\n-                 TextField::new('soustitre'),\n+                 TextField::new('soutitre'),\n                  ImageField::new('image')\n                  ->setBasePath('Welcome/')\n                 ->setUploadDir('public/Welcome')\n                -> setUploadedFileNamePattern('[randomhash].[extension]')\n"
+                }
+            ],
+            "date": 1663700441001,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller\\Admin;\n\nuse App\\Entity\\Welcome;\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n\nclass WelcomeCrudController extends AbstractCrudController\n{\n    public static function getEntityFqcn(): string\n    {\n        return Welcome::class;\n    }\n    public function configureFigureCrud(Crud $crud):crud\n    {\n        return $crud\n            ->setEntityLabelInplural('Welcome') \n            ->setENtityLabel('welcome') ; \n         }\n    /*\n    public function configureFields(string $pageName): iterable\n    {\n        return [\n            IdField::new('id'),\n            TextField::new('title'),\n            TextEditorField::new('description'),\n        ];\n    }\n    */\n}\n"
+        }
+    ]
+}

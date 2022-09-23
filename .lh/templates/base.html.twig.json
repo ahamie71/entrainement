@@ -1,0 +1,90 @@
+{
+    "sourceFile": "templates/base.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1663445964023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1663446264175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n <html>\n     <head>\n         <meta charset=\"UTF-8\">\n         <title>{% block title %}Voyage{% endblock %}</title>\n-        <meta name=\"viewport\"\n-          content=\"width=device-width, user-scalable=no,initiual-scale=1.0,maximum-scale=1/0\">\n+        \n      <link rel=\"stylesheet\"href=\"{{asset('css/bootstrap.min.css')}}\">    \n     <link rel=\"stylesheet\" href =\"{{asset('css/style.css')}}\">\n     \n     </head>\n"
+                },
+                {
+                    "date": 1663446430902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,11 @@\n        \n        <header>\n \n \n+      {% block body %} {% endblock %}\n \n+\n+\n      <script src=\"{{asset('js/bootstrap.bundle.js')}}\"></script>\n     </body>\n </html>\n"
+                },
+                {
+                    "date": 1663447174433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,33 @@\n     <body>\n        \n        <header>\n \n+         <nav class=\"navbar navbar-expand-lg navbar-light bg-dark\">\n+  <a class=\"navbar-brand\" href=\"#\">BESTFLY</a>\n+  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n+    <span class=\"navbar-toggler-icon\"></span>\n+  </button>\n \n+  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n+    <ul class=\"navbar-nav mr-auto mb-2 mb-lg-0\">\n+      <li class=\"nav-item active\">\n+        <a class=\"nav-link\" href=\"#\">Home </a>\n+      </li>\n+      <li class=\"nav-item\">\n+        <a class=\"nav-link\" href=\"#\">Link</a>\n+      </li>\n+      \n+      \n+    </ul>\n+    \n+    </form>\n+  </div>\n+</nav>\n+\n+       </header>\n+\n+\n       {% block body %} {% endblock %}\n \n \n \n"
+                },
+                {
+                    "date": 1663447217688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,11 +34,11 @@\n       </li>\n       \n       \n     </ul>\n-    \n-    </form>\n-  </div>\n+    </div>\n+   \n+ \n </nav>\n \n        </header>\n \n"
+                },
+                {
+                    "date": 1663447244225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n \n   <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n-    <ul class=\"navbar-nav mr-auto mb-2 mb-lg-0\">\n-      <li class=\"nav-item active\">\n+    <ul class=\"navbar-nav mr-auto\">\n+      <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"#\">Home </a>\n       </li>\n       <li class=\"nav-item\">\n         <a class=\"nav-link\" href=\"#\">Link</a>\n"
+                },
+                {
+                    "date": 1663447439083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n   <a class=\"navbar-brand\" href=\"#\">BESTFLY</a>\n   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n-\n   <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n     <ul class=\"navbar-nav mr-auto\">\n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"#\">Home </a>\n"
+                },
+                {
+                    "date": 1663447856070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n        \n        <header>\n \n          <nav class=\"navbar navbar-expand-lg navbar-light bg-dark\">\n-  <a class=\"navbar-brand\" href=\"#\">BESTFLY</a>\n+  <a class=\"navbar-brand text-white\" href=\"#\">BESTFLY</a>\n   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n   <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n"
+                },
+                {
+                    "date": 1663448145234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,18 +23,41 @@\n   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n   <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n-    <ul class=\"navbar-nav mr-auto\">\n+    <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n+\n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"#\">Home </a>\n       </li>\n       <li class=\"nav-item\">\n-        <a class=\"nav-link\" href=\"#\">Link</a>\n+        <a class=\"nav-link\" href=\"#\">vols</a>\n       </li>\n       \n       \n     </ul>\n+    <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n+    \n+      <li class=\"nav-item \">\n+        <a class=\"nav-link\" href=\"#\">trips </a>\n+      </li>\n+      <li class=\"nav-item\">\n+        <a class=\"nav-link\" href=\"#\">hotels</a>\n+      </li>\n+      \n+      \n+    </ul>\n+    <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n+    \n+      <li class=\"nav-item \">\n+        <a class=\"nav-link\" href=\"#\">Inscription </a>\n+      </li>\n+      <li class=\"nav-item\">\n+        <a class=\"nav-link\" href=\"#\">connexion</a>\n+      </li>\n+      \n+      \n+    </ul>\n     </div>\n    \n  \n </nav>\n"
+                },
+                {
+                    "date": 1663448223507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         <a class=\"nav-link\" href=\"#\">vols</a>\n       </li>\n       \n       \n-    </ul>\n+    \n     <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n     \n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"#\">trips </a>\n@@ -44,19 +44,21 @@\n         <a class=\"nav-link\" href=\"#\">hotels</a>\n       </li>\n       \n       \n-    </ul>\n+   \n     <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n     \n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"#\">Inscription </a>\n       </li>\n       <li class=\"nav-item\">\n         <a class=\"nav-link\" href=\"#\">connexion</a>\n       </li>\n+      <li class=\"nav-item\">\n+        <a class=\"nav-link\" href=\"#\">contact</a>\n+      </li>\n       \n-      \n     </ul>\n     </div>\n    \n  \n"
+                },
+                {
+                    "date": 1663448337325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,20 +32,16 @@\n       <li class=\"nav-item\">\n         <a class=\"nav-link\" href=\"#\">vols</a>\n       </li>\n       \n-      \n-    \n-    <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n-    \n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"#\">trips </a>\n       </li>\n       <li class=\"nav-item\">\n         <a class=\"nav-link\" href=\"#\">hotels</a>\n       </li>\n+      </ul>\n       \n-      \n    \n     <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n     \n       <li class=\"nav-item \">\n"
+                },
+                {
+                    "date": 1663448969404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n        \n        <header>\n \n          <nav class=\"navbar navbar-expand-lg navbar-light bg-dark\">\n-  <a class=\"navbar-brand text-white\" href=\"#\">BESTFLY</a>\n+  <a class=\"navbar-brand text-white\" href=\"{{path('home')}}\">BESTFLY</a>\n   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n   <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n"
+                },
+                {
+                    "date": 1663450956335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n        \n        <header>\n \n          <nav class=\"navbar navbar-expand-lg navbar-light bg-dark\">\n-  <a class=\"navbar-brand text-white\" href=\"{{path('home')}}\">BESTFLY</a>\n+  <a class=\"navbar-brand text-white\" href=\"#\">BESTFLY</a>\n   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n   <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n"
+                },
+                {
+                    "date": 1663451005252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,11 @@\n       </li>\n       <li class=\"nav-item\">\n         <a class=\"nav-link\" href=\"#\">hotels</a>\n       </li>\n+      <li class=\"nav-item\">\n+        <a class=\"nav-link\" href=\"#\">contact</a>\n+      </li>\n       </ul>\n       \n    \n     <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n@@ -49,12 +52,10 @@\n       </li>\n       <li class=\"nav-item\">\n         <a class=\"nav-link\" href=\"#\">connexion</a>\n       </li>\n-      <li class=\"nav-item\">\n-        <a class=\"nav-link\" href=\"#\">contact</a>\n-      </li>\n       \n+      \n     </ul>\n     </div>\n    \n  \n"
+                },
+                {
+                    "date": 1663846672721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n    \n     <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n     \n       <li class=\"nav-item \">\n-        <a class=\"nav-link\" href=\"#\">Inscription </a>\n+        <a class=\"nav-link\" href=\"{{path('register')}}\">Inscription </a>\n       </li>\n       <li class=\"nav-item\">\n         <a class=\"nav-link\" href=\"#\">connexion</a>\n       </li>\n"
+                },
+                {
+                    "date": 1663850458431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"{{path('register')}}\">Inscription </a>\n       </li>\n       <li class=\"nav-item\">\n-        <a class=\"nav-link\" href=\"#\">connexion</a>\n+        <a class=\"nav-link\" href=\"{{path('app-login')}}\">connexion</a>\n       </li>\n       \n       \n     </ul>\n"
+                },
+                {
+                    "date": 1663850658729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,15 +45,33 @@\n       </ul>\n       \n    \n     <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n+\n     \n-      <li class=\"nav-item \">\n-        <a class=\"nav-link\" href=\"{{path('register')}}\">Inscription </a>\n-      </li>\n-      <li class=\"nav-item\">\n-        <a class=\"nav-link\" href=\"{{path('app-login')}}\">connexion</a>\n-      </li>\n+       {% if app.user %}\n+\n+\n+                            <li class=\"nav-item\">\n+                                <a class=\"nav-link\" >{{ app.user.nom }}  {{  app.user.prenom }}</a>\n+                            </li>\n+                            <li class=\"nav-item\">\n+                                <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">Déconnexion</a>\n+                            </li>\n+\n+\n+                        {% else %}\n+\n+                            <li class=\"nav-item\">\n+                                <a class=\"nav-link\"  href=\"{{ path('register') }}\">Inscription</a>\n+                            </li>\n+                            <li class=\"nav-item\">\n+                                <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Connexion</a>\n+                            </li>\n+\n+\n+                        {% endif %}\n+\n       \n       \n     </ul>\n     </div>\n"
+                },
+                {
+                    "date": 1663850872896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,12 +26,12 @@\n   <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n     <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">\n \n       <li class=\"nav-item \">\n-        <a class=\"nav-link\" href=\"#\">Home </a>\n+        <a class=\"nav-link\" href=\"{{('home')}}\">Home </a>\n       </li>\n       <li class=\"nav-item\">\n-        <a class=\"nav-link\" href=\"#\">vols</a>\n+        <a class=\"nav-link\" href=\"{{(' app_vols')}}\">vols</a>\n       </li>\n       \n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"#\">trips </a>\n"
+                },
+                {
+                    "date": 1663851232535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"{{('home')}}\">Home </a>\n       </li>\n       <li class=\"nav-item\">\n-        <a class=\"nav-link\" href=\"{{(' app_vols')}}\">vols</a>\n+        <a class=\"nav-link\" href=\"{{('vols')}}\">vols</a>\n       </li>\n       \n       <li class=\"nav-item \">\n         <a class=\"nav-link\" href=\"#\">trips </a>\n"
+                }
+            ],
+            "date": 1663445964023,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\">\n        <title>{% block title %}Voyage{% endblock %}</title>\n        <meta name=\"viewport\"\n          content=\"width=device-width, user-scalable=no,initiual-scale=1.0,maximum-scale=1/0\">\n     <link rel=\"stylesheet\"href=\"{{asset('css/bootstrap.min.css')}}\">    \n    <link rel=\"stylesheet\" href =\"{{asset('css/style.css')}}\">\n    \n    </head>\n\n   \n\n\n\n\n    <body>\n       \n       <header>\n\n\n\n     <script src=\"{{asset('js/bootstrap.bundle.js')}}\"></script>\n    </body>\n</html>\n"
+        }
+    ]
+}

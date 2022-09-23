@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/Controller/Admin/MessagesCrudController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1663694986619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1663695172670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,17 +15,18 @@\n     {\n         return $crud\n             ->setEntityLabelInplural('demande de contacts') \n             ->setENtityLabel('demande de contact') ; \n-            \n+\n          }\n-    /*\n+    \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n-            TextField::new('title'),\n-            TextEditorField::new('description'),\n+            TextField::new('titre'),\n+            TextField::new('text'),\n+           \n         ];\n     }\n-    */\n+   \n }\n"
+                },
+                {
+                    "date": 1663695211566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,11 @@\n \n namespace App\\Controller\\Admin;\n \n use App\\Entity\\Messages;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextEditorField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class MessagesCrudController extends AbstractCrudController\n {\n"
+                },
+                {
+                    "date": 1663695293821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n+            IdField::new('clients_id')\n             TextField::new('titre'),\n             TextField::new('text'),\n            \n         ];\n"
+                },
+                {
+                    "date": 1663695312324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,11 @@\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n-            IdField::new('clients_id')\n+            IdField::new('clients_id'),\n             TextField::new('titre'),\n-            TextField::new('text'),\n+            TextField::new('text')\n            \n         ];\n     }\n    \n"
+                },
+                {
+                    "date": 1663695761458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n-            IdField::new('clients_id'),\n+           \n             TextField::new('titre'),\n             TextField::new('text')\n            \n         ];\n"
+                }
+            ],
+            "date": 1663694986619,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller\\Admin;\n\nuse App\\Entity\\Messages;\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n\nclass MessagesCrudController extends AbstractCrudController\n{\n    public static function getEntityFqcn(): string\n    {\n        return Messages::class;\n    }\n    public function configureFigureCrud(Crud $crud):crud\n    {\n        return $crud\n            ->setEntityLabelInplural('demande de contacts') \n            ->setENtityLabel('demande de contact') ; \n            \n         }\n    /*\n    public function configureFields(string $pageName): iterable\n    {\n        return [\n            IdField::new('id'),\n            TextField::new('title'),\n            TextEditorField::new('description'),\n        ];\n    }\n    */\n}\n"
+        }
+    ]
+}

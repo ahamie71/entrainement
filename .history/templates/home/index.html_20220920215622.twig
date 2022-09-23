@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+<section>
+
+
+<div class="container">
+       
+
+       {% for item in  welcome %}
+
+          
+
+       <div class="row">
+
+       <div class="col">
+       
+          {{item.titre}}
+          {{item.soutitre}}
+
+       </div>
+
+
+       <div class="col">
+
+       </div>
+
+
+ {% endfor %}   
+       </div>
+
+
+       </section>
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/Controller/Admin/MeilleursCrudController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1663496794040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1663607784091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,4 @@\n         ];\n     }\n     */\n }\n-?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1663611934547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,30 @@\n <?php\n \n namespace App\\Controller\\Admin;\n \n-use App\\Entity\\Meilleurs;\n+use App\\Entity\\Heros;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ImageField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n \n-class MeilleursCrudController extends AbstractCrudController\n+class HerosCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n-        return Meilleurs::class;\n+        return Heros::class;\n     }\n \n-    /*\n+\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-            IdField::new('id'),\n-            TextField::new('title'),\n-            TextEditorField::new('description'),\n+            TextField::new('titre'),\n+            TextField::new('soustitre'),\n+            ImageField::new(\"image\")\n+                ->setBasePath('heros/')\n+                ->setUploadDir('public/heros')\n+               -> setUploadedFileNamePattern('[randomhash].[extension]')\n         ];\n     }\n-    */\n+\n }\n"
+                },
+                {
+                    "date": 1663611960880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n \n namespace App\\Controller\\Admin;\n \n-use App\\Entity\\Heros;\n+use App\\Entity\\meilleurs;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ImageField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n \n"
+                },
+                {
+                    "date": 1663611990166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         return [\n             TextField::new('titre'),\n             TextField::new('soustitre'),\n             ImageField::new(\"image\")\n-                ->setBasePath('heros/')\n+                ->setBasePath('meilleurs/')\n                 ->setUploadDir('public/heros')\n                -> setUploadedFileNamePattern('[randomhash].[extension]')\n         ];\n     }\n"
+                },
+                {
+                    "date": 1663612015026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ImageField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n \n-class HerosCrudController extends AbstractCrudController\n+class MeilleursCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n         return Heros::class;\n"
+                },
+                {
+                    "date": 1663612145736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,30 +1,25 @@\n <?php\n \n namespace App\\Controller\\Admin;\n \n-use App\\Entity\\meilleurs;\n+use App\\Entity\\Meilleurs;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n-use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ImageField;\n-use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n \n class MeilleursCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n-        return Heros::class;\n+        return Meilleurs::class;\n     }\n \n-\n-    public function configureFields(string $pageName): iterable\n+    /*\n+    public function configureFields(string $pageXName): iterable\n     {\n         return [\n-            TextField::new('titre'),\n-            TextField::new('soustitre'),\n-            ImageField::new(\"image\")\n-                ->setBasePath('meilleurs/')\n-                ->setUploadDir('public/heros')\n-               -> setUploadedFileNamePattern('[randomhash].[extension]')\n+            IdField::new('id'),\n+            TextField::new('title'),\n+            TextEditorField::new('description'),\n         ];\n     }\n-\n+    */\n }\n"
+                },
+                {
+                    "date": 1663617595707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         return Meilleurs::class;\n     }\n \n     /*\n-    public function configureFields(string $pageXName): iterable\n+    public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n             TextField::new('title'),\n"
+                },
+                {
+                    "date": 1663618912482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,23 +3,28 @@\n namespace App\\Controller\\Admin;\n \n use App\\Entity\\Meilleurs;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ImageField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n \n-class MeilleursCrudController extends AbstractCrudController\n+class HerosCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n         return Meilleurs::class;\n     }\n \n-    /*\n+\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-            IdField::new('id'),\n-            TextField::new('title'),\n-            TextEditorField::new('description'),\n+            TextField::new('titre'),\n+            TextField::new('soustitre'),\n+            ImageField::new(\"image\")\n+                ->setBasePath('heros/')\n+                ->setUploadDir('public/heros')\n+               -> setUploadedFileNamePattern('[randomhash].[extension]')\n         ];\n     }\n-    */\n-}\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1663618983438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,12 @@\n <?php\n-\n namespace App\\Controller\\Admin;\n-\n use App\\Entity\\Meilleurs;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ImageField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n \n-class HerosCrudController extends AbstractCrudController\n+class meilleursCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n         return Meilleurs::class;\n"
+                }
+            ],
+            "date": 1663496794040,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller\\Admin;\n\nuse App\\Entity\\Meilleurs;\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n\nclass MeilleursCrudController extends AbstractCrudController\n{\n    public static function getEntityFqcn(): string\n    {\n        return Meilleurs::class;\n    }\n\n    /*\n    public function configureFields(string $pageName): iterable\n    {\n        return [\n            IdField::new('id'),\n            TextField::new('title'),\n            TextEditorField::new('description'),\n        ];\n    }\n    */\n}\n?>"
+        }
+    ]
+}

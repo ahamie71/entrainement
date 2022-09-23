@@ -1,0 +1,170 @@
+{
+    "sourceFile": "src/Controller/Admin/ClientCrudController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 38,
+            "patches": [
+                {
+                    "date": 1663679173078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1663679223671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n         return $crud\n             ->setEntityLabel('Client')\n             ->setEntityLabelInsingular('Client')\n \n+    }      \n+\n     /*\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n"
+                },
+                {
+                    "date": 1663679293370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n \n     public function configurecrud(Crud $crud):Crud\n     {\n         return $crud\n-            ->setEntityLabel('Client')\n+            ->setEntityLabelInplural('Client')\n             ->setEntityLabelInsingular('Client')\n \n-    }      \n+    }\n \n     /*\n     public function configureFields(string $pageName): iterable\n     {\n"
+                },
+                {
+                    "date": 1663679397573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,10 @@\n \n     public function configurecrud(Crud $crud):Crud\n     {\n         return $crud\n-            ->setEntityLabelInplural('Client')\n-            ->setEntityLabelInsingular('Client')\n-\n+             ->setEntityLabelInplural('Client')\n+             ->setEntityLabelInsingular('Client')\n     }\n \n     /*\n     public function configureFields(string $pageName): iterable\n@@ -30,4 +29,5 @@\n         ];\n     }\n     */\n }\n+?>\n"
+                },
+                {
+                    "date": 1663679426684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     public function configurecrud(Crud $crud):Crud\n     {\n         return $crud\n              ->setEntityLabelInplural('Client')\n-             ->setEntityLabelInsingular('Client')\n+             ->setEntityLabelInsingular('Client');\n     }\n \n     /*\n     public function configureFields(string $pageName): iterable\n"
+                },
+                {
+                    "date": 1663679786628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     {\n         return Client::class;\n     }\n \n-    public function configurecrud(Crud $crud):Crud\n+    public function configurecrud(crud $crud):Crud\n     {\n         return $crud\n              ->setEntityLabelInplural('Client')\n              ->setEntityLabelInsingular('Client');\n"
+                },
+                {
+                    "date": 1663679951643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,12 @@\n class ClientCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n-        return Client::class;\n+        return Client::class\n     }\n \n-    public function configurecrud(crud $crud):Crud\n+    public function configureCrud(Crud $crud):Crud\n     {\n         return $crud\n              ->setEntityLabelInplural('Client')\n              ->setEntityLabelInsingular('Client');\n"
+                },
+                {
+                    "date": 1663679963123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n class ClientCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n-        return Client::class\n+        return Client::class;\n     }\n \n     public function configureCrud(Crud $crud):Crud\n     {\n"
+                },
+                {
+                    "date": 1663680147156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n \n-namespace App\\Controller\\Admin;\n+namespace App\\Controller\\admin;\n \n use App\\Entity\\Client;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n"
+                },
+                {
+                    "date": 1663680155973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n \n-namespace App\\Controller\\admin;\n+namespace App\\Controller\\Admin;\n \n use App\\Entity\\Client;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n"
+                },
+                {
+                    "date": 1663680220197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     {\n         return Client::class;\n     }\n \n-    public function configureCrud(Crud $crud):Crud\n+    public function configureCrud(ClientCrud $crud):ClientCrud\n     {\n         return $crud\n              ->setEntityLabelInplural('Client')\n              ->setEntityLabelInsingular('Client');\n"
+                },
+                {
+                    "date": 1663680277083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     {\n         return Client::class;\n     }\n \n-    public function configureCrud(ClientCrud $crud):ClientCrud\n+    public function configureCrud(Crud $crud):Crud\n     {\n         return $crud\n              ->setEntityLabelInplural('Client')\n              ->setEntityLabelInsingular('Client');\n"
+                },
+                {
+                    "date": 1663680645971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n <?php\n \n namespace App\\Controller\\Admin;\n \n-use App\\Entity\\Client;\n+use App\\Entity\\client;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class ClientCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n-        return Client::class;\n+        return client::class;\n     }\n \n     public function configureCrud(Crud $crud):Crud\n     {\n"
+                },
+                {
+                    "date": 1663680902823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,18 @@\n <?php\n \n namespace App\\Controller\\Admin;\n \n-use App\\Entity\\client;\n+use App\\Entity\\Client;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class ClientCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n     {\n-        return client::class;\n+        return Client::class;\n     }\n \n-    public function configureCrud(Crud $crud):Crud\n-    {\n-        return $crud\n-             ->setEntityLabelInplural('Client')\n-             ->setEntityLabelInsingular('Client');\n-    }\n-\n     /*\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n@@ -29,5 +22,4 @@\n         ];\n     }\n     */\n }\n-?>\n"
+                },
+                {
+                    "date": 1663681939943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,13 @@\n     public static function getEntityFqcn(): string\n     {\n         return Client::class;\n     }\n-\n+    public function configureFigureCrud(Crud $crud):crud\n+    {\n+        return $crud\n+            ->setEntityLabelInplural('Client') \n+            ->setENtityLabel('CLient') ;  }\n     /*\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n"
+                },
+                {
+                    "date": 1663681997961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     public function configureFigureCrud(Crud $crud):crud\n     {\n         return $crud\n             ->setEntityLabelInplural('Client') \n-            ->setENtityLabel('CLient') ;  }\n+            ->setENtityLabel('CLient') ; \n+         }\n     /*\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n"
+                },
+                {
+                    "date": 1663683360101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,15 +16,26 @@\n         return $crud\n             ->setEntityLabelInplural('Client') \n             ->setENtityLabel('CLient') ; \n          }\n-    /*\n-    public function configureFields(string $pageName): iterable\n-    {\n-        return [\n-            IdField::new('id'),\n-            TextField::new('title'),\n-            TextEditorField::new('description'),\n-        ];\n+    \n+         public function configureFields(string $pageName): iterable\n+         {\n+             return [\n+                 IdField::new('id')\n+                     ->hideOnForm(),\n+                 TextField::new('nom'),\n+                 TextField::new('prenom'),\n+                 TextField::new('email'),\n+                     \n+                    \n+                 ArrayField::new('roles'),\n+                     \n+                 \n+                 DateTimeField::new('createdAt')\n+                     \n+             ];\n+         }\n+     \n     }\n-    */\n+    \n }\n"
+                },
+                {
+                    "date": 1663683557307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,22 +20,16 @@\n     \n          public function configureFields(string $pageName): iterable\n          {\n              return [\n-                 IdField::new('id')\n-                     ->hideOnForm(),\n+                 IdField::new('id'),\n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n                  TextField::new('email'),\n-                     \n-                    \n                  ArrayField::new('roles'),\n-                     \n-                 \n-                 DateTimeField::new('createdAt')\n-                     \n+                 DateTimeField::new('createdAt')     \n              ];\n          }\n      \n     }\n     \n-}\n+\n"
+                },
+                {
+                    "date": 1663683797952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,20 +16,18 @@\n         return $crud\n             ->setEntityLabelInplural('Client') \n             ->setENtityLabel('CLient') ; \n          }\n-    \n-         public function configureFields(string $pageName): iterable\n-         {\n-             return [\n+   \n+    public function configureFields(string $pageName): iterable\n+    {\n+        return [\n                  IdField::new('id'),\n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n-                 TextField::new('email'),\n-                 ArrayField::new('roles'),\n-                 DateTimeField::new('createdAt')     \n-             ];\n-         }\n-     \n+                 TextField::new('email')\n+                \n+                \n+        ];\n     }\n     \n-\n+}\n"
+                },
+                {
+                    "date": 1663683838959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,13 @@\n    \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-                 IdField::new('id'),\n+               \n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n                  TextField::new('email')\n+                 \n                 \n                 \n         ];\n     }\n"
+                },
+                {
+                    "date": 1663683925763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n namespace App\\Controller\\Admin;\n-\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n use App\\Entity\\Client;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class ClientCrudController extends AbstractCrudController\n@@ -16,17 +16,16 @@\n         return $crud\n             ->setEntityLabelInplural('Client') \n             ->setENtityLabel('CLient') ; \n          }\n-   \n+    /*\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-               \n+                IdField::new('id'),\n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n-                 TextField::new('email')\n-                 \n+                 TextField::new('email'),\n                 \n                 \n         ];\n     }\n"
+                },
+                {
+                    "date": 1663683942509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         return $crud\n             ->setEntityLabelInplural('Client') \n             ->setENtityLabel('CLient') ; \n          }\n-    /*\n+   \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n                 IdField::new('id'),\n"
+                },
+                {
+                    "date": 1663683971982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n \n namespace App\\Controller\\Admin;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n use App\\Entity\\Client;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n"
+                },
+                {
+                    "date": 1663684142645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,10 @@\n                 IdField::new('id'),\n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n                  TextField::new('email'),\n+                 textField::new('telephon'),\n+                 \n                 \n                 \n         ];\n     }\n"
+                },
+                {
+                    "date": 1663684179375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 IdField::new('id'),\n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n                  TextField::new('email'),\n-                 textField::new('telephon'),\n+                 textField::new('telephone'),\n                  \n                 \n                 \n         ];\n"
+                },
+                {
+                    "date": 1663684264997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n                  TextField::new('email'),\n                  textField::new('telephone'),\n+                 textField::new('password')\n                  \n                 \n                 \n         ];\n"
+                },
+                {
+                    "date": 1663684416712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n    \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-                IdField::new('id'),\n+                 IdField::new('id'),\n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n                  TextField::new('email'),\n                  textField::new('telephone'),\n"
+                },
+                {
+                    "date": 1663684506831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n    \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-                 IdField::new('id'),\n+               \n                  TextField::new('nom'),\n                  TextField::new('prenom'),\n                  TextField::new('email'),\n                  textField::new('telephone'),\n"
+                },
+                {
+                    "date": 1663684632537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <?php\n \n namespace App\\Controller\\Admin;\n-use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n-use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n+\n use App\\Entity\\Client;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class ClientCrudController extends AbstractCrudController\n@@ -17,21 +16,15 @@\n         return $crud\n             ->setEntityLabelInplural('Client') \n             ->setENtityLabel('CLient') ; \n          }\n-   \n+    /*\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-               \n-                 TextField::new('nom'),\n-                 TextField::new('prenom'),\n-                 TextField::new('email'),\n-                 textField::new('telephone'),\n-                 textField::new('password')\n-                 \n-                \n-                \n+            IdField::new('id'),\n+            TextField::new('title'),\n+            TextEditorField::new('description'),\n         ];\n     }\n     \n }\n"
+                },
+                {
+                    "date": 1663684663895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,4 +27,5 @@\n         ];\n     }\n     \n }\n+*/\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1663684677538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     {\n         return [\n             IdField::new('id'),\n             TextField::new('title'),\n-            TextEditorField::new('description'),\n+            TextEditorField::new('description')\n         ];\n     }\n     \n }\n"
+                },
+                {
+                    "date": 1663684731665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,6 @@\n             TextField::new('title'),\n             TextEditorField::new('description')\n         ];\n     }\n-    \n+  */  \n }\n\\ No newline at end of file\n-*/\n"
+                },
+                {
+                    "date": 1663684814233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,15 +16,15 @@\n         return $crud\n             ->setEntityLabelInplural('Client') \n             ->setENtityLabel('CLient') ; \n          }\n-    /*\n+    \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n             TextField::new('title'),\n             TextEditorField::new('description')\n         ];\n     }\n-  */  \n\\ No newline at end of file\n-}\n+    \n+}\n"
+                },
+                {
+                    "date": 1663684904001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n <?php\n \n namespace App\\Controller\\Admin;\n-\n use App\\Entity\\Client;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class ClientCrudController extends AbstractCrudController\n {\n"
+                },
+                {
+                    "date": 1663684933792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n namespace App\\Controller\\Admin;\n use App\\Entity\\Client;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextEditorField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class ClientCrudController extends AbstractCrudController\n {\n"
+                },
+                {
+                    "date": 1663685060144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,13 @@\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n-            TextField::new('title'),\n-            TextEditorField::new('description')\n+            TextField::new('name'),\n+            TextField::new('prenom'),\n+            TextField::new('email'),\n+            TextField::new('telephone'),\n+            TextField::new('password'),\n         ];\n     }\n     \n }\n"
+                },
+                {
+                    "date": 1663685220685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-            IdField::new('id'),\n+            \n             TextField::new('name'),\n             TextField::new('prenom'),\n             TextField::new('email'),\n             TextField::new('telephone'),\n"
+                },
+                {
+                    "date": 1663685241941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             \n-            TextField::new('name'),\n+            TextField::new('nom'),\n             TextField::new('prenom'),\n             TextField::new('email'),\n             TextField::new('telephone'),\n             TextField::new('password'),\n"
+                },
+                {
+                    "date": 1663695517485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-            \n+            idfield::new('id'),\n             TextField::new('nom'),\n             TextField::new('prenom'),\n             TextField::new('email'),\n             TextField::new('telephone'),\n"
+                }
+            ],
+            "date": 1663679173078,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller\\Admin;\n\nuse App\\Entity\\Client;\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n\nclass ClientCrudController extends AbstractCrudController\n{\n    public static function getEntityFqcn(): string\n    {\n        return Client::class;\n    }\n\n    public function configurecrud(Crud $crud):Crud\n    {\n        return $crud\n            ->setEntityLabel('Client')\n            ->setEntityLabelInsingular('Client')\n\n    /*\n    public function configureFields(string $pageName): iterable\n    {\n        return [\n            IdField::new('id'),\n            TextField::new('title'),\n            TextEditorField::new('description'),\n        ];\n    }\n    */\n}\n"
+        }
+    ]
+}
