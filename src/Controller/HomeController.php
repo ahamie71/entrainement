@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
-use App\Entity\Heros;
+use App\Entity\Offre;
+use App\Form\HomeType;
 use App\Entity\Welcome;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,14 +20,31 @@ class HomeController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/home', name:'home')]
-    public function index(): Response
+    #[Route('/', name:'home')]
+    public function index(Request $request,EntityManagerInterface $entityManager): Response
     {
 
-        $Welcome = $this->entityManager->getRepository(Welcome::class)->findAll();
+           $offre= new Offre();
+        
+        
+            $form=$this->createForm(HomeType::class,$offre);          
 
-        return $this->render('home/index.html.twig' , [
-            'Welcome' =>$Welcome
+            
+           $form->handleRequest($request);
+
+           if ($form->isSubmitted() && $form->isValid()){   
+             
+             
+        
+               $entityManager->persist($offre);
+               $entityManager->flush();
+           }
+
+           return $this->render('home/index.html.twig', [
+            'form' => $form->createView()
         ]);
+
+
+        
     }
 }
