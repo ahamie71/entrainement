@@ -11,10 +11,11 @@
 }
 .navbar{
     padding: 20px;
+    background-color: red;
 }
 
 .img-Welcome{
-    width:700px !important;
+    width:1000px !important;
 }
 
 .hello{
