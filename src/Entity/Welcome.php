@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\WelcomeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: WelcomeRepository::class)]
+#[ORM\Entity(repositoryClass:WelcomeRepository::class)]
 class Welcome
 {
     #[ORM\Id]
