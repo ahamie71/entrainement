@@ -1,0 +1,10 @@
+Exemple d'offre .
+   
+   AVANT TOUT FAIRE UN GIT STATUS POUR VERIFIER LES CHANGEMENT EFFECTUÉES ET NON EFFECTUÉES ;
+   GIT ADD 
+   GIT COMMIT -M
+   GIT PUSH 
+   PULL REQUEST 
+
+
+Dans git on a la branche principal appelée main qui relie d'autre branch appelée develop ou tout lemonde envoie leurs travaux emergée.par la commande pull request qui va faire une verificatiion du code s'il ya des errerus sinon il sera emergé vers la branche develop 
