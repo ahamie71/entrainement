@@ -19,7 +19,7 @@ class HomeController extends AbstractController
     public function __construct(EntityManagerInterface $entityManager ){
         $this->entityManager = $entityManager;
     }
-
+    
     #[Route('/', name:'home')]
     public function index(Request $request,EntityManagerInterface $entityManager): Response
     {
