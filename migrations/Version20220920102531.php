@@ -53,5 +53,6 @@ final class Version20220920102531 extends AbstractMigration
         $this->addSql('DROP TABLE offre_categorie');
         $this->addSql('DROP TABLE offres');
         $this->addSql('DROP TABLE messenger_messages');
+        
     }
 }

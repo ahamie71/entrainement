@@ -3,51 +3,93 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<section>
 
-<div class="container">
 
-            {% for item in Welcome %}
+<div class="contenant">
+  
+  <div class="texte_centrer"><h2> VOIR LE MONDE DE SES YEUX EST MILLE FOIS MIEUX QUE N'IMPORTE QUEL RÊVE</h2><br>
+  <h2>RESERVER VOLS + Hotels</h2> </div>
+  
+</div>
+       <div class="container-fluid">
+       <div class="jumbotron">
+  <h1 class="display-4">Welcome to BESTFLY</h1>
+  <p class="lead"></p>
 
-            <div class="row d-flex justify-content-around">
+     
+<section class="form">
+        <div class="container">
+ <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+    {{ form_start(form) }}
 
-                <div class="col mt-4 py-5">
 
-                    <div>
-
-                        <h3 class="hello"> {{ item.titre }}</h3>
+                    <div class="mb-3">
+                   
                     
-                    
                     </div>
 
+                   
+                 
 
 
 
-                    <br>
-
-                    <div class="mt-4">
-                        <h3 class="dear text-muted"> {{ item.soutitre }}</h3>
-                    </div>
-
-                    <br>
-                    <br>
-
-                     <div class="mt-5 ">
-                        <a href="" class="btn bg-dark text-white btn-block btn-lg">Chercher</a>
-                    </div>
-
-
-
-                </div>
-
-                <div class="col">
-                    <img src="/Welcome/{{ item.image }}" class="img-fluid img-welcome" alt="image">
-                </div>
+        {{ form_rest(form) }}
+         </div>
+                <div class="col"></div>
             </div>
-
-            {% endfor %}
         </div>
     </section>
+    {{ form_end(form) }}
 
 
+
+  <hr class="my-4">
+  <p></p>
+  
+</div>
+        </div>
+   
+         
+     
+<style>
+     
+.contenant {
+  position: relative;
+  text-align: center;
+  color:red;
+  margin-top:130px
+}
+
+.texte_centrer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.jumbotron { 
+margin-top:250px;
+background-color:#696969;
+background-size:cover;
+Height:60vh;
+}
+
+body{
+  background-color:#black;
+}
+
+h1{
+  color:white,
+}
+
+h2{
+  color:blue;
+}
+    </style>
+
+
+
+    
+   
     {% endblock %}

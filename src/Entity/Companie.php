@@ -21,12 +21,12 @@ class Companie
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
-    #[ORM\OneToMany(mappedBy: 'companies', targetEntity: Offres::class, orphanRemoval: true)]
-    private Collection $offres;
+    #[ORM\OneToMany(mappedBy: 'companies', targetEntity: Offre::class, orphanRemoval: true)]
+    private Collection $offre;
 
     public function __construct()
     {
-        $this->offres = new ArrayCollection();
+        $this->offre = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -59,32 +59,25 @@ class Companie
     }
 
     /**
-     * @return Collection<int, Offres>
+     * @return Collection<int, Offrs>
      */
-    public function getOffres(): Collection
+    public function getOffre(): Collection
     {
-        return $this->offres;
+        return $this->offre;
     }
 
-    public function addOffre(Offres $offre): self
+    public function addOffre(Offre $offre): self
     {
-        if (!$this->offres->contains($offre)) {
-            $this->offres->add($offre);
-            $offre->setCompanies($this);
+        if (!$this->offre->contains($offre)) {
+            $this->offre->add($offre);
+            $offre->setCompanie($this);
         }
 
         return $this;
     }
 
-    public function removeOffre(Offres $offre): self
-    {
-        if ($this->offres->removeElement($offre)) {
-            // set the owning side to null (unless already changed)
-            if ($offre->getCompanies() === $this) {
-                $offre->setCompanies(null);
-            }
-        }
+    
 
-        return $this;
-    }
+        
+    
 }

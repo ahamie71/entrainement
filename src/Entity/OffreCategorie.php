@@ -15,24 +15,24 @@ class OffreCategorie
 
     #[ORM\ManyToOne(inversedBy: 'offreCategories')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Offres $offres = null;
+    private ?Offre $offre = null;
 
     #[ORM\ManyToOne(inversedBy: 'offreCategories')]
-    private ?Catégorie $categories = null;
+    private ?Catégorie $categorie = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getOffres(): ?Offres
+    public function getOffre(): ?Offre
     {
-        return $this->offres;
+        return $this->offre;
     }
 
-    public function setOffres(?Offres $offres): self
+    public function setOffre(?Offre $offre): self
     {
-        $this->offres = $offres;
+        $this->offre = $offre;
 
         return $this;
     }

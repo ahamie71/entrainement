@@ -34,3 +34,4 @@ class MessagesCrudController extends AbstractCrudController
     }
    
 }
+
